@@ -202,3 +202,7 @@ multiple `Device` instances within the same process automatically.
 ## License
 
 MIT — see [LICENSE](LICENSE)
+
+## Resources
+
+[Hailo’s Developer Zone](https://hailo.ai/developer-zone/)
