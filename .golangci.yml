@@ -1,0 +1,41 @@
+version: "2"
+run:
+  tests: true
+linters:
+  enable:
+    - gocyclo
+    - gosec
+    - revive
+  settings:
+    govet:
+      enable:
+        - fieldalignment
+    revive:
+      severity: warning
+      rules:
+        - name: var-naming
+        - name: indent-error-flow
+  exclusions:
+    generated: lax
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
+    rules:
+      - linters:
+          - errcheck
+        path: _test\.go
+      - path: mocks/
+        text: SA1019
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
